@@ -1,0 +1,31 @@
+<div class="card">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th>Category</th>
+                <th>Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="items?.length != 0">
+            <tr *ngFor="let item of items">
+                <td><img style="width: 100px;" src="{{item.imageThumbnail || './assets/images/product-blank.jpg'}}" alt=""></td>
+                <td>{{ item.productCode }}</td>
+                <td>{{ item.itemName }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.departmentId }}</td>
+                <td>{{ item.categoryId }}</td>
+                <td>{{ item.manufacturerId }}</td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="items?.length == 0">
+            <tr>
+                <td colspan="3" class="no-data-available">No data!</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

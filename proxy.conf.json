@@ -1,0 +1,10 @@
+{
+    "/posts/api": {
+        "target": "https://testingdemo123.azurewebsites.net",
+        "secure": true,
+        "pathRewrite": {
+            "^/posts": ""
+        },
+        "changeOrigin": true
+    }
+}
